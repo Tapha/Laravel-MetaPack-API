@@ -42,7 +42,7 @@ class MetaPackServiceProvider extends ServiceProvider
     {
         $this->app->singleton('MetaPack', function ($app) {
             $config = $app['config']->get('MetaPack');
-            $client = new Client($config['baseUrl'], $config['token']);
+            $client = new Client($config['url'], $config['key'], $config['secret'], $config['carrierServices']);
             return new MetaPack($client);
         });
 

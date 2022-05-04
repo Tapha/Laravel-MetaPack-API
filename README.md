@@ -10,12 +10,10 @@ Laravel >= 9.0
 ## Installation
 Laravel MetaPack uses composer to make installation a breeze.
 
-
 **Install via composer** 
 ``` bash
 composer require tapha/MetaPack
 ```
-
 
 **Register service provider**
 Add the Laravel MetaPack service provider to your `config/app.php` file in the providers key
@@ -26,11 +24,8 @@ Add the Laravel MetaPack service provider to your `config/app.php` file in the p
 ]
 ```
 
-
 **MetaPack facade alias**
 Then add the `MetaPack` facade to your `aliases` key: 'MetaPack' => tapha\MetaPack\Facades\MetaPack::class
-
-
 
 ## Configuration
 Configuration can be done via your `.env` file.
@@ -59,9 +54,9 @@ use App\Http\Controllers\Controller;
 
 class MetaPackController extends Controller
 {
-    public function getEvent(int $eventId)
+    public function getConsignment(int $consignmentId)
     {
-        return response()->json(MetaPack::event()->get($eventId));
+        return response()->json(MetaPack::consignment()->get($consignmentId));
     }
 }
 ```
@@ -69,15 +64,6 @@ class MetaPackController extends Controller
 ### Query Building 
 The wrapper also provides a convenient way for you to build fairly elaborate MetaPack API requests.
 The following methods return the instance so you can chain more constraints onto the request as required.
-
-#### Expansions
-MetaPack has many models that refer to each other, and often you’ll want to fetch related data along with the primary model you’re querying - 
-for example, you’ll want to fetch an event along with organizer.
-
-```php
-MetaPack::event()->expand('organizer')->get($eventId);
-
-```
 
 ### Handling Exceptions
 The MetaPack API will return errors as required. I am still looking for a nicer way to handle these exceptions... For the time being, simply wrap your call in a try/catch block.

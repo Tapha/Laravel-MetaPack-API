@@ -24,14 +24,26 @@ class Client implements ClientInterface
     /**
      * @var string
      */
-    protected $token;
+    protected $apiKey;
+
+    /**
+     * @var string
+     */
+    protected $apiSecret;
+
+    /**
+     * @var string
+     */
+    protected $carrierServices;
 
 
     /**
-     * @param $baseUrl
-     * @param $token
+     * @param $baseURL
+     * @param $apiKey
+     * @param $apiSecret
+     * @param $carrierServices
      */
-    public function __construct($baseUrl, $token)
+    public function __construct($baseURL, $apiKey, $apiSecret, $carrierServices)
     {
         $stack = HandlerStack::create();
 
@@ -39,13 +51,15 @@ class Client implements ClientInterface
 
         $this->client = new HttpClient([
             'handler' => $stack,
-            'base_uri' => $baseUrl,
+            'base_uri' => $baseURL,
             'allow_redirects' => [
                 'strict' => true
             ]
         ]);
 
-        $this->token = $token;
+        $this->apiKey = $apiKey;
+        $this->apiSecret = $apiSecret;
+        $this->carrierServices = $carrierServices;
     }
 
     /**
@@ -83,9 +97,44 @@ class Client implements ClientInterface
      * @param array $options
      * @return mixed
      */
+    public function rawGet($endPoint, array $options = [])
+    {
+        //$params += ['auth' => [$this->apiKey, $this->apiSecret]];
+        $credentials = base64_encode($this->apiKey . ':' . $this->apiSecret);
+
+        $options += [
+            'headers' => [
+                'Authorization' => 'Basic ' . $credentials,
+            ],
+        ];
+        
+        $response = $this->client->get($endPoint, $options);
+        switch ($response->getHeader('content-type')) {
+            case "application/json":
+                return $response->json();
+                break;
+            default:
+                return $response->getBody()->getContents();
+        }
+    }
+
+    /**
+     * @param $endPoint
+     * @param array $params
+     * @param array $options
+     * @return mixed
+     */
     public function get($endPoint, array $params = [], array $options = [])
     {
-        $params += ['token' => $this->token];
+        //$params += ['auth' => [$this->apiKey, $this->apiSecret]];
+        $credentials = base64_encode($this->apiKey . ':' . $this->apiSecret);
+
+        $params += [
+            'headers' => [
+                'Authorization' => 'Basic ' . $credentials,
+            ],
+        ];
+        
         $response = $this->client->get($endPoint, $this->prepareData($params, $options));
         switch ($response->getHeader('content-type')) {
             case "application/json":
