@@ -1,16 +1,16 @@
 <?php
 
-namespace YourName\Boilerplate\Facades;
+namespace tapha\MetaPack\Facades;
 
 use Illuminate\Support\Facades\Facade;
-use YourName\Boilerplate\Contracts\Api\Webhook;
-use YourName\Boilerplate\Contracts\Client;
-use YourName\Boilerplate\Factories\Entity\Event;
+use tapha\MetaPack\Contracts\Api\Webhook;
+use tapha\MetaPack\Contracts\Client;
+use tapha\MetaPack\Factories\Entity\Event;
 
 /**
  * @method static void setClient(Client $client)
  */
-class Boilerplate extends Facade
+class MetaPack extends Facade
 {
 
     /**
@@ -20,6 +20,6 @@ class Boilerplate extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'YourName\Boilerplate\Boilerplate';
+        return 'tapha\MetaPack\MetaPack';
     }
 }

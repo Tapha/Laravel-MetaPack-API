@@ -1,8 +1,8 @@
 <?php
 
-namespace YourName\Boilerplate\Exceptions;
+namespace tapha\MetaPack\Exceptions;
 
-class BadPageException extends BoilerplateErrorException
+class BadPageException extends MetaPackErrorException
 {
     //
 }

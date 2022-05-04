@@ -1,16 +1,16 @@
 <?php
 
-namespace YourName\Boilerplate\Factories\Api;
+namespace tapha\MetaPack\Factories\Api;
 
-use YourName\Boilerplate\Factories\Entity\Example as ExampleEntity;
-use YourName\Boilerplate\Contracts\Api\Example as ExampleInterface;
-use YourName\Boilerplate\Factories\HelperEntity\ExampleHelperEntity;
+use tapha\MetaPack\Factories\Entity\Example as ExampleEntity;
+use tapha\MetaPack\Contracts\Api\Example as ExampleInterface;
+use tapha\MetaPack\Factories\HelperEntity\ExampleHelperEntity;
 
 /**
- * Boilerplate API wrapper for Laravel
+ * MetaPack API wrapper for Laravel
  *
- * @package  Boilerplate
- * @author   @YourName
+ * @package  MetaPack
+ * @author   @tapha
  */
 class Example extends AbstractApi implements ExampleInterface
 {
@@ -22,7 +22,7 @@ class Example extends AbstractApi implements ExampleInterface
     protected $class = ExampleEntity::class;
 
     /**
-     * The Boilerplate API endpoint of the resource type.
+     * The MetaPack API endpoint of the resource type.
      *
      * @var string
      */

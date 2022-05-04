@@ -1,6 +1,6 @@
 <?php
 
-namespace YourName\Boilerplate\Factories\Entity;
+namespace tapha\MetaPack\Factories\Entity;
 
 class Webhook extends AbstractEntity
 {

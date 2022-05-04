@@ -1,12 +1,12 @@
 <?php
 
-namespace YourName\Boilerplate\Contracts\Api;
+namespace tapha\MetaPack\Contracts\Api;
 
 /**
  * An object representing a single webhook associated with the account.
  *
- * @package  Boilerplate
- * @author   @YourName
+ * @package  MetaPack
+ * @author   @tapha
  */
 interface Webhook
 {
@@ -24,16 +24,16 @@ interface Webhook
     /**
      * Send create request to API
      *
-     * @param \YourName\Boilerplate\Factories\Entity\Webhook $webhook
-     * @return \YourName\Boilerplate\Factories\Entity\Webhook
+     * @param \tapha\MetaPack\Factories\Entity\Webhook $webhook
+     * @return \tapha\MetaPack\Factories\Entity\Webhook
      */
-    public function create(\YourName\Boilerplate\Factories\Entity\Webhook $webhook);
+    public function create(\tapha\MetaPack\Factories\Entity\Webhook $webhook);
 
     /**
      * Delete a webhook
      *
      * @param $id
-     * @return \YourName\Boilerplate\Factories\Entity\Webhook
+     * @return \tapha\MetaPack\Factories\Entity\Webhook
      */
     public function delete($id);
 }

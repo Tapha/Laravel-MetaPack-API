@@ -1,19 +1,19 @@
 {
-  "name": "YourName/Boilerplate",
-  "description": "Laravel PHP API Facade/Wrapper Boilerplate",
-  "keywords": ["laravel", "api", "boilerplate"],
-  "homepage": "",
+  "name": "tapha/laravel-metapack-api",
+  "description": "A Simple Laravel Wrapper for the MetaPack Shipping and Tracking API's",
+  "keywords": ["laravel", "api", "metapack"],
+  "homepage": "https://github.com/Tapha/laravel-metapack-api",
   "license": "MIT",
   "authors": [
     {
-      "name": "Your Name Here",
+      "name": "Tapha",
       "email": "Your Email Here"
     }
   ],
   "require": {
-    "illuminate/support": "^6.0|^7.0|^8.0",
-    "php": "^7.2",
-    "guzzlehttp/guzzle": "^6.0|^7.0",
+    "php": "^8.0.2",
+    "guzzlehttp/guzzle": "^7.2",
+    "laravel/framework": "^9.11",
     "ext-json": "*"
   },
   "require-dev": {
@@ -23,21 +23,21 @@
   },
   "autoload": {
     "psr-4": {
-      "YourName\\Boilerplate\\": "src/"
+      "tapha\\MetaPack\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "YourName\\Boilerplate\\": "tests/"
+      "tapha\\MetaPack\\": "tests/"
     }
   },
   "extra": {
     "laravel": {
       "providers": [
-        "YourName\\Boilerplate\\BoilerplateServiceProvider"
+        "tapha\\MetaPack\\MetaPackServiceProvider"
       ],
       "aliases": {
-        "Boilerplate": "YourName\\Boilerplate\\Facades\\Boilerplate"
+        "MetaPack": "tapha\\MetaPack\\Facades\\MetaPack"
       }
     }
   }

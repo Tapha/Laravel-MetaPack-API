@@ -1,12 +1,12 @@
 <?php
 
-namespace YourName\Boilerplate\Contracts;
+namespace tapha\MetaPack\Contracts;
 
 /**
- * Boilerplate API wrapper for Laravel
+ * MetaPack API wrapper for Laravel
  *
- * @package  Boilerplate
- * @author   @YourName
+ * @package  MetaPack
+ * @author   @tapha
  */
 interface Client
 {

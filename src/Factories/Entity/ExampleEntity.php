@@ -1,10 +1,10 @@
 <?php
 
-namespace YourName\Boilerplate\Factories\Entity;
+namespace tapha\MetaPack\Factories\Entity;
 
 /**
  * Class ExampleEntity
- * @package YourName\Boilerplate\Factories\Entity
+ * @package tapha\MetaPack\Factories\Entity
  *
  *
  */

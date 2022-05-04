@@ -1,25 +1,25 @@
 <?php
 
-namespace YourName\Boilerplate;
+namespace tapha\MetaPack;
 
-use YourName\Boilerplate\Factories\Api\DisplaySettings;
-use YourName\Boilerplate\Factories\Api\Format;
-use YourName\Boilerplate\Factories\Api\Media;
-use YourName\Boilerplate\Factories\Api\Venue;
-use YourName\Boilerplate\Factories\Client;
-use YourName\Boilerplate\Factories\Api\Category;
-use YourName\Boilerplate\Factories\Api\Subcategory;
-use YourName\Boilerplate\Factories\Api\Webhook;
-use YourName\Boilerplate\Factories\Api\Event;
-use YourName\Boilerplate\Factories\Api\User;
+use tapha\MetaPack\Factories\Api\DisplaySettings;
+use tapha\MetaPack\Factories\Api\Format;
+use tapha\MetaPack\Factories\Api\Media;
+use tapha\MetaPack\Factories\Api\Venue;
+use tapha\MetaPack\Factories\Client;
+use tapha\MetaPack\Factories\Api\Category;
+use tapha\MetaPack\Factories\Api\Subcategory;
+use tapha\MetaPack\Factories\Api\Webhook;
+use tapha\MetaPack\Factories\Api\Event;
+use tapha\MetaPack\Factories\Api\User;
 
 /**
- * Boilerplate API wrapper for Laravel
+ * MetaPack API wrapper for Laravel
  *
- * @package  Boilerplate
- * @author   @YourName
+ * @package  MetaPack
+ * @author   @tapha
  */
-class Boilerplate
+class MetaPack
 {
     public $client;
 

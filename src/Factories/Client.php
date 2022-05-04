@@ -1,17 +1,17 @@
 <?php
 
-namespace YourName\Boilerplate\Factories;
+namespace tapha\MetaPack\Factories;
 
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Client as HttpClient;
-use \YourName\Boilerplate\Contracts\Client as ClientInterface;
+use \tapha\MetaPack\Contracts\Client as ClientInterface;
 use Illuminate\Support\Arr;
 
 /**
- * Boilerplate API wrapper for Laravel
+ * MetaPack API wrapper for Laravel
  *
- * @package  Boilerplate
- * @author   @YourName
+ * @package  MetaPack
+ * @author   @tapha
  */
 class Client implements ClientInterface
 {

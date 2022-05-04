@@ -1,16 +1,16 @@
 <?php
 
-namespace YourName\Boilerplate\Factories\Api;
+namespace tapha\MetaPack\Factories\Api;
 
-use YourName\Boilerplate\Factories\Client;
-use YourName\Boilerplate\Factories\HelperEntity\ObjectList;
-use YourName\Boilerplate\Factories\HelperEntity\Pagination;
+use tapha\MetaPack\Factories\Client;
+use tapha\MetaPack\Factories\HelperEntity\ObjectList;
+use tapha\MetaPack\Factories\HelperEntity\Pagination;
 
 /**
- * Boilerplate API wrapper for Laravel
+ * MetaPack API wrapper for Laravel
  *
- * @package  Boilerplate
- * @author   @YourName
+ * @package  MetaPack
+ * @author   @tapha
  */
 abstract class AbstractApi
 {

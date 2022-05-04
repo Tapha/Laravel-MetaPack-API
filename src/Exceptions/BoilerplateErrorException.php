@@ -1,8 +1,8 @@
 <?php
 
-namespace YourName\Boilerplate\Exceptions;
+namespace tapha\MetaPack\Exceptions;
 
-class BoilerplateErrorException extends \ErrorException
+class MetaPackErrorException extends \ErrorException
 {
     //
 }

@@ -1,22 +1,22 @@
 <?php
 
-namespace YourName\Boilerplate\Factories;
+namespace tapha\MetaPack\Factories;
 
 use Illuminate\Http\Response;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use YourName\Boilerplate\Exceptions\NotFoundException;
-use YourName\Boilerplate\Exceptions\BoilerplateErrorException;
-use YourName\Boilerplate\Exceptions\MethodNotAllowedException;
-use YourName\Boilerplate\Exceptions\BadPageException;
-use YourName\Boilerplate\Exceptions\ExpansionFailedException;
-use YourName\Boilerplate\Exceptions\HitRateLimitException;
-use YourName\Boilerplate\Exceptions\InternalErrorException;
-use YourName\Boilerplate\Exceptions\InvalidAuthException;
-use YourName\Boilerplate\Exceptions\InvalidAuthHeaderException;
-use YourName\Boilerplate\Exceptions\InvalidBatchException;
-use YourName\Boilerplate\Exceptions\NoAuthException;
-use YourName\Boilerplate\Exceptions\NotAuthorizedException;
+use tapha\MetaPack\Exceptions\NotFoundException;
+use tapha\MetaPack\Exceptions\MetaPackErrorException;
+use tapha\MetaPack\Exceptions\MethodNotAllowedException;
+use tapha\MetaPack\Exceptions\BadPageException;
+use tapha\MetaPack\Exceptions\ExpansionFailedException;
+use tapha\MetaPack\Exceptions\HitRateLimitException;
+use tapha\MetaPack\Exceptions\InternalErrorException;
+use tapha\MetaPack\Exceptions\InvalidAuthException;
+use tapha\MetaPack\Exceptions\InvalidAuthHeaderException;
+use tapha\MetaPack\Exceptions\InvalidBatchException;
+use tapha\MetaPack\Exceptions\NoAuthException;
+use tapha\MetaPack\Exceptions\NotAuthorizedException;
 
 class ErrorHandler
 {
@@ -39,38 +39,38 @@ class ErrorHandler
 
     /**
      * @param ResponseInterface $response
-     * @throws BoilerplateErrorException
+     * @throws MetaPackErrorException
      * @throws Exception
      */
     public function handleErrorResponse(ResponseInterface $response)
     {
-        $Boilerplate = json_decode($response->getBody()->getContents());
+        $MetaPack = json_decode($response->getBody()->getContents());
 
-        switch ($Boilerplate->error) {
+        switch ($MetaPack->error) {
             case "INVALID_AUTH":
-                throw new InvalidAuthException($Boilerplate->error_description, $Boilerplate->status_code);
+                throw new InvalidAuthException($MetaPack->error_description, $MetaPack->status_code);
             case "NOT_FOUND":
-                throw new NotFoundException($Boilerplate->error_description, $Boilerplate->status_code);
+                throw new NotFoundException($MetaPack->error_description, $MetaPack->status_code);
             case "INVALID_AUTH_HEADER":
-                throw new InvalidAuthHeaderException($Boilerplate->error_description, $Boilerplate->status_code);
+                throw new InvalidAuthHeaderException($MetaPack->error_description, $MetaPack->status_code);
             case "NO_AUTH":
-                throw new NoAuthException($Boilerplate->error_description, $Boilerplate->status_code);
+                throw new NoAuthException($MetaPack->error_description, $MetaPack->status_code);
             case "BAD_PAGE":
-                throw new BadPageException($Boilerplate->error_description, $Boilerplate->status_code);
+                throw new BadPageException($MetaPack->error_description, $MetaPack->status_code);
             case "NOT_AUTHORIZED":
-                throw new NotAuthorizedException($Boilerplate->error_description, $Boilerplate->status_code);
+                throw new NotAuthorizedException($MetaPack->error_description, $MetaPack->status_code);
             case "METHOD_NOT_ALLOWED":
-                throw new MethodNotAllowedException($Boilerplate->error_description, $Boilerplate->status_code);
+                throw new MethodNotAllowedException($MetaPack->error_description, $MetaPack->status_code);
             case "HIT_RATE_LIMIT":
-                throw new HitRateLimitException($Boilerplate->error_description, $Boilerplate->status_code);
+                throw new HitRateLimitException($MetaPack->error_description, $MetaPack->status_code);
             case "INTERNAL_ERROR":
-                throw new InternalErrorException($Boilerplate->error_description, $Boilerplate->status_code);
+                throw new InternalErrorException($MetaPack->error_description, $MetaPack->status_code);
             case "EXPANSION_FAILED":
-                throw new ExpansionFailedException($Boilerplate->error_description, $Boilerplate->status_code);
+                throw new ExpansionFailedException($MetaPack->error_description, $MetaPack->status_code);
             case "INVALID_BATCH":
-                throw new InvalidBatchException($Boilerplate->error_description, $Boilerplate->status_code);
+                throw new InvalidBatchException($MetaPack->error_description, $MetaPack->status_code);
             default:
-                throw new BoilerplateErrorException($Boilerplate->error_description ? $Boilerplate->error_description : $Boilerplate->Boilerplate->code, $Boilerplate->status_code);
+                throw new MetaPackErrorException($MetaPack->error_description ? $MetaPack->error_description : $MetaPack->MetaPack->code, $MetaPack->status_code);
 
         }
     }

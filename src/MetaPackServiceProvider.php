@@ -1,11 +1,11 @@
 <?php
 
-namespace YourName\Boilerplate;
+namespace tapha\MetaPack;
 
 use Illuminate\Support\ServiceProvider;
-use YourName\Boilerplate\Factories\Client;
+use tapha\MetaPack\Factories\Client;
 
-class BoilerplateServiceProvider extends ServiceProvider
+class MetaPackServiceProvider extends ServiceProvider
 {
     /**
      * Perform post-registration booting of services.
@@ -24,13 +24,13 @@ class BoilerplateServiceProvider extends ServiceProvider
      */
     protected function setupConfig()
     {
-        $source = realpath(__DIR__ . '/../config/Boilerplate.php');
+        $source = realpath(__DIR__ . '/../config/MetaPack.php');
 
         if (class_exists('Illuminate\Foundation\Application', false)) {
-            $this->publishes([ $source => config_path('Boilerplate.php') ], 'config');
+            $this->publishes([ $source => config_path('MetaPack.php') ], 'config');
         }
 
-        $this->mergeConfigFrom($source, 'Boilerplate');
+        $this->mergeConfigFrom($source, 'MetaPack');
     }
 
     /**
@@ -40,12 +40,12 @@ class BoilerplateServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('Boilerplate', function ($app) {
-            $config = $app['config']->get('Boilerplate');
+        $this->app->singleton('MetaPack', function ($app) {
+            $config = $app['config']->get('MetaPack');
             $client = new Client($config['baseUrl'], $config['token']);
-            return new Boilerplate($client);
+            return new MetaPack($client);
         });
 
-        $this->app->alias('Boilerplate', 'YourName\Boilerplate\Boilerplate');
+        $this->app->alias('MetaPack', 'tapha\MetaPack\MetaPack');
     }
 }

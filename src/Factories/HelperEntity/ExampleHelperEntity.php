@@ -1,6 +1,6 @@
 <?php
 
-namespace YourName\Boilerplate\Factories\HelperEntity;
+namespace tapha\MetaPack\Factories\HelperEntity;
 
 class ExampleHelperEntity
 {

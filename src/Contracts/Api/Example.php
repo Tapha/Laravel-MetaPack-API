@@ -1,15 +1,15 @@
 <?php
 
-namespace YourName\Boilerplate\Contracts\Api;
+namespace tapha\MetaPack\Contracts\Api;
 
-use YourName\Boilerplate\Factories\Entity\Example as ExampleEntity;
-use YourName\Boilerplate\Factories\HelperEntity\ExampleHelperEntity;
+use tapha\MetaPack\Factories\Entity\Example as ExampleEntity;
+use tapha\MetaPack\Factories\HelperEntity\ExampleHelperEntity;
 
 /**
- * The Example object represents an Boilerplate Example. An Example is owned by one Organization..
+ * The Example object represents an MetaPack Example. An Example is owned by one Organization..
  *
- * @package  Boilerplate
- * @author   @YourName
+ * @package  MetaPack
+ * @author   @tapha
  */
 interface Example
 {

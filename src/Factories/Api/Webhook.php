@@ -1,15 +1,15 @@
 <?php
 
-namespace YourName\Boilerplate\Factories\Api;
+namespace tapha\MetaPack\Factories\Api;
 
-use YourName\Boilerplate\Factories\Entity\Webhook as WebhookEntity;
-use YourName\Boilerplate\Contracts\Api\Webhook as WebhookInterface;
+use tapha\MetaPack\Factories\Entity\Webhook as WebhookEntity;
+use tapha\MetaPack\Contracts\Api\Webhook as WebhookInterface;
 
 /**
- * Boilerplate API wrapper for Laravel
+ * MetaPack API wrapper for Laravel
  *
- * @package  Boilerplate
- * @author   @YourName
+ * @package  MetaPack
+ * @author   @tapha
  */
 class Webhook extends AbstractApi implements WebhookInterface
 {
@@ -22,7 +22,7 @@ class Webhook extends AbstractApi implements WebhookInterface
     protected $class = WebhookEntity::class;
 
     /**
-     * The Boilerplate API endpoint of the resource type.
+     * The MetaPack API endpoint of the resource type.
      *
      * @var string
      */

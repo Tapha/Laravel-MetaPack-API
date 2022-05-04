@@ -1,8 +1,8 @@
 <?php
 
-namespace YourName\Boilerplate\Tests;
+namespace tapha\MetaPack\Tests;
 
-class BoilerplateTest extends TestCase
+class MetaPackTest extends TestCase
 {
     //TODO: implement
 }
